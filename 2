@@ -1,0 +1,21 @@
+Static block and Constructor:
+Constructor are noting but they used to initialize the object.
+For every class there will be a default constructor,whenever we create object constructor will be called than object will be created.
+Constructor having class name for method properties.
+EX:- we created 2 objects 2 times constructor will be called:
+
+public class q2{
+    public static void main(String args[]){
+        Demo d1 = new Demo();
+        Demo d2 = new Demo();
+    }
+}
+class Demo{
+    static{
+        System.out.println("Static Block");
+        
+    }
+    Demo(){
+        System.out.println("Constructor");
+    }
+}
