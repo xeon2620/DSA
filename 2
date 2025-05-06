@@ -24,3 +24,67 @@ static block will be created with the static keyword.it will call automatically 
 
 static method
 for static method no need to call with object you can directly call with class name and here static will act as instance or object
+
+class Main{
+    public static void main(String args[])
+    {
+        Person obj= new Person();
+        obj.setAge(24);
+        obj.setName("manthan");
+        obj.setPassedOut(true);
+        obj.setMarks(24);
+        obj.setERP(22);
+        int res = obj.getAge();
+        String namew = obj.getName();
+        boolean es = obj.getPassedOut();
+        float s = obj.getMarks();
+        long re = obj.getERP();
+        System.out.println(res);
+        System.out.println(namew);
+        System.out.println(es);
+        System.out.println(s);
+        System.out.println(re);
+    }
+}
+class Person {
+    int age;
+    String name;
+    boolean passedOut;
+    float marks;
+    long erp;
+
+    void setAge(int age1){
+        this.age = age1;
+    }
+    int getAge(){
+        return age;
+    }
+
+    void setName(String name1){
+        this.name = name1;
+    }
+    String getName(){
+        return name;
+    }
+
+    void setPassedOut(boolean passedOut1){
+        this.passedOut = passedOut1;
+    }
+    boolean getPassedOut(){
+        return passedOut;
+    }
+
+    void setMarks(float marks){
+        this.marks = marks;
+    }
+    float getMarks(){
+        return marks;
+    }
+
+    void setERP(long erp1){
+        this.erp = erp1;
+    }
+    long getERP(){
+        return erp;
+    }
+}
