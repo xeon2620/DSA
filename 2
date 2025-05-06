@@ -1,4 +1,4 @@
-Static block and Constructor:
+\Static block and Constructor:
 Constructor are noting but they used to initialize the object.
 For every class there will be a default constructor,whenever we create object constructor will be called than object will be created.
 Constructor having class name for method properties.
@@ -200,5 +200,22 @@ public class FactorialForLoop {
         }
 
         System.out.println("Factorial of " + number + " is: " + factorial);
+    }
+}
+
+import java.util.Arrays;
+
+public class ReverseNumberArray {
+    public static void main(String[] args) {
+        int[] numberArray = {1, 2, 3, 4, 5};
+        int length = numberArray.length;
+
+        for (int i = 0; i < length / 2; i++) {
+            int temp = numberArray[i];
+            numberArray[i] = numberArray[length - i - 1];
+            numberArray[length - i - 1] = temp;
+        }
+
+        System.out.println("Reversed Array: " + Arrays.toString(numberArray));
     }
 }
