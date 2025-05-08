@@ -96,3 +96,45 @@ int[] arr = {1,2,3,4,5};
 for(var : arr){
   sout(var)
 }
+
+pattern 12345 right angles:
+import java.util.Scanner;
+
+public class RightAngleTriangle {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+        int n = scanner.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+inverted right angled triangle with nested loops with symbol *
+import java.util.Scanner;
+
+public class InvertedTriangle {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+        int n = scanner.nextInt();
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
