@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class WeekDays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number from 1 to 7: ");
+        int day = scanner.nextInt();
+
+        if (day == 1) {
+            System.out.println("Monday");
+        } else if (day == 2) {
+            System.out.println("Tuesday");
+        } else if (day == 3) {
+            System.out.println("Wednesday");
+        } else if (day == 4) {
+            System.out.println("Thursday");
+        } else if (day == 5) {
+            System.out.println("Friday");
+        } else if (day == 6) {
+            System.out.println("Saturday");
+        } else if (day == 7) {
+            System.out.println("Sunday");
+        } else {
+            System.out.println("Invalid input! Please enter a number between 1 and 7.");
+        }
+
+        scanner.close();
+    }
+}
+
+switch case:
+cases have to be same as expressions ,must be a constant or litera
+duplicate cases are not allowed
+break is used to terminate the sequence
+if break is not used it will continue to next case
+default will execute if non of the above will execute
+if default is  not at the end , put break after it
+
+switch(expression){
+  case:
+    statement;
+    break;
+  default:
+    statement;
+
+
+import java.util.Scanner;
+
+public class WeekDaysSwitch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a number from 1 to 7: ");
+        int day = scanner.nextInt();
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid input! Please enter a number between 1 and 7.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
+
+ternary operator:
+(condition) ? statement1 : statement2 ;
+(n == 5) ? sout("yes") : sout ("no")
+
+for each loop:
+in collections we dont have index values in those situations we have use for each loop
+
+int[] arr = {1,2,3,4,5};
+for(var : arr){
+  sout(var)
+}
