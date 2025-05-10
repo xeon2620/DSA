@@ -31,6 +31,8 @@ class Main{
     }
 }
 
+
+
 All the variable storing same datatype instead of creating multiple variables create an array.
 If we create multiple variables to get the data simply we can print varibles.
 when it comes to array we want to print the data we can print using index values and by default index values will start with 0.
@@ -142,10 +144,7 @@ class Main{
 }
 
 
-
-
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 import java.util.*;
 class Main{
@@ -167,9 +166,143 @@ class Main{
         }
     }
 }
-
-
-
-
-
 whenever trying to assign or trying to get nth value of array you will get of an array you will get an execption called array out of bound.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+check array is sorted or not :
+
+public class Main {
+    public static boolean isSorted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false; // not sorted
+            }
+        }
+        return true; // sorted
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        if (isSorted(arr)) {
+            System.out.println("Array is sorted");
+        } else {
+            System.out.println("Array is not sorted");
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+check element is present in array or not:
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        int target = 4;
+        if (contains(arr, target)) {
+            System.out.println("Number Found");
+        } else {
+            System.out.println("Not Found");
+        }
+    }
+
+    public static boolean contains(int[] arr, int target) {
+        for (int i : arr) {
+            if (i == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[1,0,1,0,1,0] move all zeros to one side[1,1,1,0,0,0]:
+
+public class Main {
+    public static void moveZeros(int[] arr) {
+        int nonZeroIndex = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                // Swap arr[i] with arr[nonZeroIndex]
+                int temp = arr[i];
+                arr[i] = arr[nonZeroIndex];
+                arr[nonZeroIndex] = temp;
+                nonZeroIndex++;
+            }
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 0, 1, 0, 1, 0};
+        System.out.println("Original array:");
+        printArray(arr);
+        moveZeros(arr);
+        System.out.println("Array after moving zeros:");
+        printArray(arr);
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+write a code swap two number:
+public class Main {
+    public static void swap(int a, int b) {
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        System.out.println("Before swap:");
+        System.out.println("x = " + x);
+        System.out.println("y = " + y);
+        swap(x, y);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+maximum consecutive ones:
+{1,0,1,0,1,1,1,0,1,1}
+public class MaxConsecutiveOnes {
+    public static int findMaxConsecutiveOnes(int[] arr) {
+        int maxCount = 0, currentCount = 0;
+        for (int num : arr) {
+            if (num == 1) {
+                currentCount++;
+                maxCount = Math.max(maxCount, currentCount);
+            } else {
+                currentCount = 0;
+            }
+        }
+        return maxCount;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 1, 0, 1, 1, 1, 0, 1, 1};
+        System.out.println("Maximum consecutive 1s: " + findMaxConsecutiveOnes(array));
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+find the missing element in the sorted array:
+import java.util.*;
+class Main{
+    public static void main(String arg[]){
+        int[] arr= {1,2,3,5,6,7,8,9};
+        int missing=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]!=i+1){
+                missing=missing+(i+1);
+                break;
+            }
+        }
+        System.out.print("The missing value is"+missing);
+    }
+}
