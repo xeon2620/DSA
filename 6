@@ -1,11 +1,13 @@
-2d array 
-consist of rows and columns 
+2 Dimensional Array:-
+It consists of rows and column.
 
-syntax - int[][] arr = new int[3][5]
+Syntax:-
+int[][] arr= new int[n][m]
+very 1st square value represent rows and 2nd one represent column.
+while declaring array we have to declare number of rows and column are optional.
+Each row will act as a individual array.
 
-while declaring array we have to declare no of rows and clumns numbers are optional
-each row will act as a individual array 
-
+Example:-
 import java.util.*;
 class Main{
     public static void main(String[] args){
@@ -24,4 +26,42 @@ class Main{
             }
             System.out.println();
         }
-    }  
+    }    
+}
+
+sum of zig zag element left diagonal:
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        int[][] arr = new int[3][3];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.println("Enter the " + (i + 1) + "," + (j + 1) + " value");
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        SumOfRightDiagonalElement(arr); // Removed extra parameters
+        // for (int i = 0; i < arr.length; i++) {
+        //     for (int j = 0; j < arr[0].length; j++) {
+        //         System.out.print(arr[i][j]);
+        //
+        //     }
+        //     System.out.println();
+        // }
+    }
+
+    public static int SumOfRightDiagonalElement(int[][] arr) {
+        int sum = 0;
+        for (int j = 0; j < arr[0].length; j++) {
+            sum += arr[0][j];
+            sum += arr[arr.length - 1][j];
+        }
+        for (int i = 1; i < arr.length - 1; i++) {
+            sum += arr[i][i];
+        }
+        System.out.println("Sum of Right Diagonal Elements: " + sum);
+        return sum; // Added return statement
+    }
+}
