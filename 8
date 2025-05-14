@@ -1,0 +1,90 @@
+Recurssions:-
+Function call itself and itself  
+Function calling same func itself and itself.
+Function calling another func itself and itself till it meet the break condition.
+* Recursions:-
+
+-> Function call itself and itself till it bit's base condition.
+-> There are two types os recursions:-
+   1) Function calling an same function call itself and itself. 
+   2) function calling an another function call itself and itself.
+-> If didn't mantation base condition is called stack overflow.
+-> Functions are use to break the code.
+
+Q:- Write the code to print factorial.
+
+-> For every recursive call element will be push into stack after reaching base condition element will be pop.
+   our Questation 5,4,3,2,1 push into stack.
+
+code:-
+  fact(n){
+    if(n==0){
+        return 1;
+    }
+    else{
+        return n*fact(n-1);
+    }
+  } 
+
+* Pass by value and Pass by function
+-> Java we don't have pointer so we can't reaching value so java have pointer.
+
+From a given string we have to remove a character using recurssion:
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        String a = "asdfghjkl";
+        String b = removeG(a, 0);
+        System.out.println(b);
+    }
+
+    public static String removeG(String str, int index) {
+        if (index == str.length()) {
+            return "";
+        }
+        if (str.charAt(index) == 'g') {
+            return removeG(str, index + 1);
+        } else {
+            return str.charAt(index) + removeG(str, index + 1);
+        }
+    }
+}
+
+
+From a Given String Skip a entire word and print rest of the character:
+class Day_9_Code {
+
+    // -----------  Without Recursion  --------------------- //
+    // public static void main(String[] args) {
+    //     String a = "Hello";
+    //     char[] b = a.toCharArray();
+    //     for(int i=0; i<b.length; i++){
+    //         if(b.length != 0 && b[i] == 'e'){
+    //            continue;
+    //         }
+    //         System.out.print(b[i]);
+    //     }
+    // }
+
+    // --------------- Using Recursion --------------- //
+     static String skip(String ip){
+        if(ip.isEmpty()){
+            return "";
+        }
+        char ch = ip.charAt(0);
+        if(ip.startsWith("Hello")){
+            return skip(ip.substring(5));
+        }
+        else{
+            return ch + skip(ip.substring(1));
+        }
+
+     }
+
+     public static void main(String[] args) {
+        String ip = "qwerHelloasdf";
+        System.out.println(skip(ip));
+     }
+    
+}
